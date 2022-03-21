@@ -51,7 +51,7 @@ public class ShoppingCart {
         float total= 0;
         for(CartEntry entry:entries.values()){
             float entryCost= entry.getProduct().getPrice()*entry.getQuantity();
-            total=total*entryCost;
+            total=total+entryCost;
         }
         return total;
     }

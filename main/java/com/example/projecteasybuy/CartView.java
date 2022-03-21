@@ -12,7 +12,9 @@ public class CartView {
 
     public CartView() throws IOException {
         URL uiFile = new File("C:/Users/Lamiya/IdeaProjects/projectEasyBuy/src/main/resources/com/example/projecteasybuy/cart.fxml").toURI().toURL();
+        FXMLLoader fxmlLoader = new FXMLLoader();
         Parent root = FXMLLoader.load(uiFile);
+        this.view=root;
 
     }
     public Parent getView() {
