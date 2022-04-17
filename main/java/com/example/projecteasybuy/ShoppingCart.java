@@ -7,16 +7,16 @@ import java.util.Map;
 
 public class ShoppingCart {
     private static ShoppingCart INSTANCE;
-
+    Products product;
     public static ShoppingCart getInstance(){
-        if(INSTANCE==null){
+         if(INSTANCE==null){
             INSTANCE= new ShoppingCart();
         }
         return INSTANCE;
     }
     private Map<String,CartEntry> entries;
 
-    public ShoppingCart(){
+    private ShoppingCart(){
         this.entries=new HashMap<>();
     }
 
@@ -26,7 +26,7 @@ public class ShoppingCart {
             productEntry.increaseQuantity();
         }
         else{
-            Products product=Products.valueOf(productName);
+            Products product=Products.name;
             CartEntry entry=new CartEntry(product,1);
             entries.put(productName.toUpperCase(),entry);
         }

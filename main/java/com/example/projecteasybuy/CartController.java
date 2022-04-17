@@ -29,10 +29,12 @@ public class CartController {
 
         if(entries.isEmpty()){
             Label emptyLabel = new Label("Empty Cart!");
+            emptyLabel.setStyle("-fx-font-weight: bold;-fx-font-size:20pt;-fx-text-fill: #fc0202");
             cartPane.getChildren().add(emptyLabel);
         }
         else{
-            Label shoppingCartTitle= new Label("Cart");
+            Label shoppingCartTitle= new Label("Your Cart");
+            shoppingCartTitle.setStyle("-fx-font-weight: bold;-fx-font-size:20pt");
             cartPane.getChildren().add(shoppingCartTitle);
 
             for(CartEntry cartEntry:entries){
@@ -46,6 +48,8 @@ public class CartController {
 
             HBox totalView= totalView(ShoppingCart.getInstance().calculateTotal());
             cartPane.getChildren().add(totalView);
+
+
         }
 
     }
@@ -58,8 +62,13 @@ public class CartController {
         totalLabel.setStyle("-fx-font-size:15pt");
 
         this.totalPriceLabel = new Label(String.valueOf(totalPrice));
+        totalPriceLabel.setStyle("-fx-font-weight: bold;-fx-font-size:15pt");
+        VBox vox = new VBox();
+        Button ptcButton= new Button("Proceed to checkout");
+        vox.setAlignment(Pos.CENTER);
+        ptcButton.setStyle("-fx-background-color: #fc0202;-fx-font-weight: bold;-fx-text-fill: white");
+        layout.getChildren().addAll(totalLabel,this.totalPriceLabel,ptcButton);
 
-        layout.getChildren().addAll(totalLabel,this.totalPriceLabel);
         return layout;
 
     }
@@ -82,7 +91,7 @@ public class CartController {
         quantity.setStyle("-fx-padding:5px");
 
         Button plusButton= new Button("+");
-        plusButton.setStyle("-fx-padding:5px");
+        plusButton.setStyle("-fx-padding:5px;-fx-background-color: #fc0202;-fx-font-weight: bold;-fx-text-fill: white");
         plusButton.setUserData(cartEntry.getProduct().name());
         plusButton.setOnAction(e-> {
             String name = (String)((Node)e.getSource()).getUserData();
@@ -92,7 +101,7 @@ public class CartController {
         });
 
         Button minusButton= new Button("-");
-        minusButton.setStyle("-fx-padding:5px");
+        minusButton.setStyle("-fx-padding:5px;-fx-background-color: #fc0202;-fx-font-weight: bold;-fx-text-fill: white");
         minusButton.setUserData(cartEntry.getProduct().name());
         minusButton.setOnAction(e-> {
             String name = (String)((Node)e.getSource()).getUserData();
@@ -102,7 +111,7 @@ public class CartController {
         });
 
         Label price = new Label(String.valueOf("Tk. "+cartEntry.getProduct().getPrice()));
-        price.setStyle("-fx-padding:5px");
+        price.setStyle("-fx-padding:10px");
 
         layout.getChildren().addAll(imageView,productName,plusButton,quantity,minusButton,price);
 

@@ -2,16 +2,13 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
-<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.shape.SVGPath?>
 
 <AnchorPane style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projecteasybuy.MenuController">
     <children>
@@ -21,18 +18,6 @@
                     <left>
                         <VBox fx:id="sideArea">
                             <children>
-                                <HBox fx:id="sideControls" alignment="CENTER" prefHeight="25.0" prefWidth="67.0" spacing="8.0" style="-fx-background-color: fe043c;" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                    <children>
-                                        <Label fx:id="closeButton" alignment="CENTER" maxHeight="10.0" maxWidth="10.0" minHeight="10.0" minWidth="10.0" onMouseClicked="#closeApp" style="-fx-background-color: red; -fx-background-radius: 5em;">
-                                            <cursor>
-                                                <Cursor fx:constant="HAND" />
-                                            </cursor>
-                                            <graphic>
-                                                <SVGPath content="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm4.3 14.3c-.39.39-1.02.39-1.41 0L12 13.41 9.11 16.3c-.39.39-1.02.39-1.41 0-.39-.39-.39-1.02 0-1.41L10.59 12 7.7 9.11c-.39-.39-.39-1.02 0-1.41.39-.39 1.02-.39 1.41 0L12 10.59l2.89-2.89c.39-.39 1.02-.39 1.41 0 .39.39.39 1.02 0 1.41L13.41 12l2.89 2.89c.38.38.38 1.02 0 1.41z" fill="#ffffff00" style="-fx-fill: white;" />
-                                            </graphic>
-                                        </Label>
-                                    </children>
-                                </HBox>
                                 <VBox fx:id="sideNav" alignment="TOP_CENTER" prefWidth="67.0" spacing="30.0" style="-fx-background-color: fe043c;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="25.0" VBox.vgrow="ALWAYS">
                                     <children>
                                         <Region fx:id="navHome" maxHeight="18.0" maxWidth="18.0" minHeight="18.0" minWidth="18.0" onMouseClicked="#showHomeView" opacity="0.75" prefHeight="18.0" prefWidth="18.0" style="-fx-shape: &quot;M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z&quot;; -fx-background-color: #ffffff;">
@@ -58,7 +43,7 @@
                             <content>
                                 <BorderPane fx:id="contentPane">
                                     <center>
-                                        <VBox fx:id="componentBox" BorderPane.alignment="CENTER" />
+                                        <VBox fx:id="componentBox" style="-fx-background-color: white;" BorderPane.alignment="CENTER" />
                                     </center>
                                 </BorderPane>
                             </content>
